@@ -4,11 +4,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>جدول الروتين اليومي</title>
+<title>جدول روتيني اليومي</title>
 <link href="https://fonts.googleapis.com/css2?family=Amiri&display=swap">
 <style>
+/* 1- Base Styles */
 *{margin:0;padding:0;box-sizing:border-box;}
-html,body{min-height:100%;font-family:'Amiri',sans-serif;direction:rtl;}
+html,body{min-height:100%;font-family:'Amiri';direction:rtl;}
 body{background:linear-gradient(135deg,#fddde6 0%,#ffebf0 100%);padding:20px;}
 .container{max-width:900px;margin:0 auto;background:white;border-radius:20px;box-shadow:0 20px 60px rgba(0,0,0,0.2);overflow:hidden;}
 .header{background:linear-gradient(135deg,#f8a5c2,#ffb6c1);color:white;padding:40px 20px;text-align:center;}
@@ -35,91 +36,89 @@ body{background:linear-gradient(135deg,#fddde6 0%,#ffebf0 100%);padding:20px;}
 .stars{font-size:30px;}
 .reset-btn{width:100%;padding:14px;margin-top:20px;background:#f0f0f0;border:none;border-radius:10px;font-size:16px;cursor:pointer;}
 .montessori-icon{width:120px;height:120px;}
-.input-name{width:100%;padding:12px;margin-bottom:20px;border-radius:10px;border:2px solid #ffe0f0;font-size:16px;}
+
+/* 2- اسم المستخدم */
+#userName {
+  color: #ff6f91;           /* نص وردي */
+  border: 2px solid #ff6f91; /* حدود وردية */
+  border-radius: 12px;       /* حواف مستديرة */
+  width: 180px;              /* قصير، لاسم ثلاثي */
+  padding: 6px 10px;
+  font-size: 18px;
+  font-family: 'Amiri';
+  background: none;          /* بدون خلفية */
+}
 </style>
 </head>
 
 <body>
+
 <div class="container">
 
 <div class="header">
 <h1>🌟 جدول روتيني اليومي | My Daily Routine</h1>
 <p>تابع مهامك اليومية واجمع النجوم | Track tasks and collect stars</p>
+<!-- خانة الاسم -->
+<input type="text" id="userName" placeholder="اكتب اسمك هنا | Enter your name">
 </div>
 
 <div class="content">
 
-<!-- User Name Input -->
-<input type="text" id="userName" class="input-name" placeholder="ادخلي اسمك | Enter Your Name">
-
-<div id="dateDisplay" style="margin-bottom:20px;font-size:16px;color:#ff6f91;"></div>
-
+<!-- Morning Routine -->
 <div class="section">
 <h2>☀️ روتين الصباح | Morning Routine</h2>
-<div class="task-list" id="morningTasks">
-
+<div class="task-list">
 <div class="task-item" onclick="toggleTask(this)">
 <div class="task-checkbox"></div>
 <div class="task-name"><img src="icons/wakeup.png" class="montessori-icon"> نصحى بدري | Wake up</div>
 </div>
-
 <div class="task-item" onclick="toggleTask(this)">
 <div class="task-checkbox"></div>
 <div class="task-name"><img src="icons/makebed.png" class="montessori-icon"> ترتيب السرير | Make Bed</div>
 </div>
-
 <div class="task-item" onclick="toggleTask(this)">
 <div class="task-checkbox"></div>
 <div class="task-name"><img src="icons/bathroom.png" class="montessori-icon"> استخدام الحمام | Bathroom</div>
 </div>
-
 <div class="task-item" onclick="toggleTask(this)">
 <div class="task-checkbox"></div>
 <div class="task-name"><img src="icons/teeth.png" class="montessori-icon"> تنظيف الأسنان | Brush Teeth</div>
 </div>
-
 <div class="task-item" onclick="toggleTask(this)">
 <div class="task-checkbox"></div>
 <div class="task-name"><img src="icons/breakfast.png" class="montessori-icon"> الفطور | Breakfast</div>
 </div>
-
 </div>
 </div>
 
+<!-- Evening Routine -->
 <div class="section">
 <h2>🌙 روتين المساء | Evening Routine</h2>
-<div class="task-list" id="eveningTasks">
-
+<div class="task-list">
 <div class="task-item" onclick="toggleTask(this)">
 <div class="task-checkbox"></div>
 <div class="task-name"><img src="icons/toys.png" class="montessori-icon"> ترتيب الألعاب | Tidy Toys</div>
 </div>
-
 <div class="task-item" onclick="toggleTask(this)">
 <div class="task-checkbox"></div>
 <div class="task-name"><img src="icons/shower.png" class="montessori-icon"> الاستحمام | Shower</div>
 </div>
-
 <div class="task-item" onclick="toggleTask(this)">
 <div class="task-checkbox"></div>
 <div class="task-name"><img src="icons/teeth1.png" class="montessori-icon"> تنظيف الأسنان | Brush Teeth</div>
 </div>
-
 <div class="task-item" onclick="toggleTask(this)">
 <div class="task-checkbox"></div>
 <div class="task-name"><img src="icons/sleep.png" class="montessori-icon"> لبس البيجامة | Pajamas</div>
 </div>
-
 <div class="task-item" onclick="toggleTask(this)">
 <div class="task-checkbox"></div>
 <div class="task-name"><img src="icons/story.png" class="montessori-icon"> قراءة قصة | Story Time</div>
 </div>
-
 <div class="task-item" onclick="toggleTask(this)">
 <div class="task-checkbox"></div>
 <div class="task-name"><img src="icons/bedtime.png" class="montessori-icon"> وقت النوم | Bedtime</div>
 </div>
-
 </div>
 </div>
 
@@ -140,71 +139,63 @@ body{background:linear-gradient(135deg,#fddde6 0%,#ffebf0 100%);padding:20px;}
 </div>
 
 <script>
-let userNameInput = document.getElementById("userName");
-let today = new Date();
-let day = today.toLocaleDateString('ar-SA', { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' });
-document.getElementById("dateDisplay").textContent = day;
+// LocalStorage for saving progress
+const tasks = document.querySelectorAll('.task-item');
+const nameInput = document.getElementById('userName');
 
-// Load saved name
-if(localStorage.getItem("userName")) {
-    userNameInput.value = localStorage.getItem("userName");
+// Load previous data
+window.onload = function(){
+  if(localStorage.getItem('userName')) nameInput.value = localStorage.getItem('userName');
+  tasks.forEach((task, idx)=>{
+    if(localStorage.getItem('task_'+idx)=='completed') task.classList.add('completed');
+  });
+  updateProgress();
 }
 
-// Save name and date when typing
-userNameInput.addEventListener("input", function() {
-    localStorage.setItem("userName", userNameInput.value);
-    localStorage.setItem("date", new Date().toISOString());
-    loadProgress();
+// Save name in localStorage
+nameInput.addEventListener('input',()=>{
+  localStorage.setItem('userName', nameInput.value);
+  const today = new Date();
+  localStorage.setItem('date', today.toLocaleDateString());
 });
 
+// Toggle tasks
 function toggleTask(el){
-    el.classList.toggle('completed');
-    updateProgress();
-    saveProgress();
+el.classList.toggle('completed');
+updateProgress();
+saveProgress();
 }
 
+// Update progress
 function updateProgress(){
-    const all=document.querySelectorAll('.task-item');
-    const done=document.querySelectorAll('.task-item.completed');
-    const perc=Math.round((done.length/all.length)*100);
-    document.getElementById('progressFill').style.width=perc+'%';
-    document.getElementById('progressText').textContent=perc+'%';
-    document.getElementById('completedCount').textContent=done.length;
-    document.getElementById('totalCount').textContent=all.length;
-    const stars=Math.floor(done.length/2);
-    document.getElementById('starsCount').textContent=stars;
-    let starsDisp='';
-    for(let i=0;i<stars;i++){starsDisp+='⭐ ';}
-    document.getElementById('starsDisplay').textContent=starsDisp;
+const all=document.querySelectorAll('.task-item');
+const done=document.querySelectorAll('.task-item.completed');
+const perc=Math.round((done.length/all.length)*100);
+document.getElementById('progressFill').style.width=perc+'%';
+document.getElementById('progressText').textContent=perc+'%';
+document.getElementById('completedCount').textContent=done.length;
+document.getElementById('totalCount').textContent=all.length;
+const stars=Math.floor(done.length/2);
+document.getElementById('starsCount').textContent=stars;
+let starsDisp='';
+for(let i=0;i<stars;i++){starsDisp+='⭐ ';}
+document.getElementById('starsDisplay').textContent=starsDisp||'🎯 استمري في العمل يا أميرتي!';
 }
 
-function resetDay(){
-    document.querySelectorAll('.task-item').forEach(t=>t.classList.remove('completed'));
-    localStorage.removeItem("tasks");
-    updateProgress();
-}
-
+// Save progress to LocalStorage
 function saveProgress(){
-    const all=document.querySelectorAll('.task-item');
-    let progress = [];
-    all.forEach((t,i)=>{progress[i]=t.classList.contains('completed');});
-    localStorage.setItem("tasks", JSON.stringify(progress));
+tasks.forEach((task, idx)=>{
+  if(task.classList.contains('completed')) localStorage.setItem('task_'+idx,'completed');
+  else localStorage.setItem('task_'+idx,'');
+});
 }
 
-function loadProgress(){
-    const all=document.querySelectorAll('.task-item');
-    let progress = JSON.parse(localStorage.getItem("tasks"));
-    if(progress){
-        all.forEach((t,i)=>{
-            if(progress[i]) t.classList.add('completed');
-            else t.classList.remove('completed');
-        });
-    }
-    updateProgress();
+// Reset Day
+function resetDay(){
+tasks.forEach(t=>t.classList.remove('completed'));
+updateProgress();
+tasks.forEach((task, idx)=>localStorage.setItem('task_'+idx,''));
 }
-
-// Load progress on page load
-window.onload = loadProgress;
 
 </script>
 
