@@ -83,7 +83,7 @@ body {
 .reset-btn {width:100%;padding:12px;margin-top:20px;background:#f0f0f0;border:none;border-radius:8px;font-size:14px;color:#666;cursor:pointer;transition:all 0.3s ease;}
 .reset-btn:hover {background:#e0e0e0;}
 @media(max-width:600px){.header h1{font-size:24px;}.section h2{font-size:18px;}.content{padding:20px;}}
-.montessori-icon {width:24px;height:24px;}
+.montessori-icon {width:50px;height:50px;} /* حجم الأيقونات */
 </style>
 </head>
 <body>
@@ -96,73 +96,73 @@ body {
 
   <!-- Morning Routine -->
   <div class="section">
-   <h2>☀️ روتين الصباح</h2>
+   <h2>☀️ Morning Routine</h2>
    <div class="task-list" id="morningTasks">
     <div class="task-item" onclick="toggleTask(this)">
      <div class="task-checkbox"></div>
-     <div class="task-name"><img src="icons/wakeup.png" class="montessori-icon"> نصحى من النوم بدري</div>
+     <div class="task-name"><img src="icons/wakeup.png" class="montessori-icon"> Wake up early</div>
     </div>
     <div class="task-item" onclick="toggleTask(this)">
      <div class="task-checkbox"></div>
-     <div class="task-name"><img src="icons/makebed.png" class="montessori-icon"> ترتيب السرير</div>
+     <div class="task-name"><img src="icons/makebed.png" class="montessori-icon"> Make bed</div>
     </div>
     <div class="task-item" onclick="toggleTask(this)">
      <div class="task-checkbox"></div>
-     <div class="task-name"><img src="icons/bathroom.png" class="montessori-icon"> استخدام الحمام</div>
+     <div class="task-name"><img src="icons/bathroom.png" class="montessori-icon"> Bathroom</div>
     </div>
     <div class="task-item" onclick="toggleTask(this)">
      <div class="task-checkbox"></div>
-     <div class="task-name"><img src="icons/teeth.png" class="montessori-icon"> ننظف اسناننا</div>
+     <div class="task-name"><img src="icons/teeth.png" class="montessori-icon"> Brush teeth</div>
     </div>
     <div class="task-item" onclick="toggleTask(this)">
      <div class="task-checkbox"></div>
-     <div class="task-name"><img src="icons/breakfast.png" class="montessori-icon"> ناكل فطورنا</div>
+     <div class="task-name"><img src="icons/breakfast.png" class="montessori-icon"> Breakfast</div>
     </div>
    </div>
   </div>
 
   <!-- Evening Routine -->
   <div class="section">
-   <h2>🌙 روتين المساء</h2>
+   <h2>🌙 Evening Routine</h2>
    <div class="task-list" id="eveningTasks">
     <div class="task-item" onclick="toggleTask(this)">
      <div class="task-checkbox"></div>
-     <div class="task-name"><img src="icons/toys.png" class="montessori-icon"> نرتب ألعابنا</div>
+     <div class="task-name"><img src="icons/toys.png" class="montessori-icon"> Tidy toys</div>
     </div>
     <div class="task-item" onclick="toggleTask(this)">
      <div class="task-checkbox"></div>
-     <div class="task-name"><img src="icons/shower.png" class="montessori-icon"> ناخذ شاور</div>
+     <div class="task-name"><img src="icons/shower.png" class="montessori-icon"> Shower</div>
     </div>
     <div class="task-item" onclick="toggleTask(this)">
      <div class="task-checkbox"></div>
-     <div class="task-name"><img src="icons/teeth1.png" class="montessori-icon"> ننظف اسناننا</div>
+     <div class="task-name"><img src="icons/teeth1.png" class="montessori-icon"> Brush teeth</div>
     </div>
     <div class="task-item" onclick="toggleTask(this)">
      <div class="task-checkbox"></div>
-     <div class="task-name"><img src="icons/sleep.png" class="montessori-icon"> نلبس بيجامه</div>
+     <div class="task-name"><img src="icons/sleep.png" class="montessori-icon"> Pajamas</div>
     </div>
     <div class="task-item" onclick="toggleTask(this)">
      <div class="task-checkbox"></div>
-     <div class="task-name"><img src="icons/story.png" class="montessori-icon"> نقرأ قصة</div>
+     <div class="task-name"><img src="icons/story.png" class="montessori-icon"> Read story</div>
     </div>
     <div class="task-item" onclick="toggleTask(this)">
      <div class="task-checkbox"></div>
-     <div class="task-name"><img src="icons/bedtime.png" class="montessori-icon"> وقت النوم</div>
+     <div class="task-name"><img src="icons/bedtime.png" class="montessori-icon"> Bedtime</div>
     </div>
    </div>
   </div>
 
   <!-- Progress Section -->
   <div class="progress-section">
-   <div class="progress-title">🎯 تقدمك اليوم</div>
+   <div class="progress-title">🎯 Progress Today</div>
    <div class="progress-bar"><div class="progress-fill" id="progressFill" style="width:0%"><span id="progressText">0%</span></div></div>
    <div class="stats">
-    <div class="stat-box"><div class="stat-number" id="completedCount">0</div><div class="stat-label">مهام مكملة</div></div>
-    <div class="stat-box"><div class="stat-number" id="totalCount">11</div><div class="stat-label">إجمالي المهام</div></div>
-    <div class="stat-box"><div class="stat-number" id="starsCount">0</div><div class="stat-label">عدد النجوم</div></div>
+    <div class="stat-box"><div class="stat-number" id="completedCount">0</div><div class="stat-label">Completed Tasks</div></div>
+    <div class="stat-box"><div class="stat-number" id="totalCount">11</div><div class="stat-label">Total Tasks</div></div>
+    <div class="stat-box"><div class="stat-number" id="starsCount">0</div><div class="stat-label">Stars</div></div>
    </div>
    <div class="stars-container"><div class="stars" id="starsDisplay"></div></div>
-   <button class="reset-btn" onclick="resetDay()">🔄 إعادة تعيين اليوم</button>
+   <button class="reset-btn" onclick="resetDay()">🔄 Reset Day</button>
   </div>
 
  </div>
@@ -182,7 +182,7 @@ function updateProgress(){
   document.getElementById('starsCount').textContent=stars;
   let starsDisp='';
   for(let i=0;i<stars;i++){starsDisp+='⭐ ';}
-  document.getElementById('starsDisplay').textContent=starsDisp||'🎯 استمري في العمل يا أميرتي!';
+  document.getElementById('starsDisplay').textContent=starsDisp||'🎯 Keep going!';
 }
 function resetDay(){document.querySelectorAll('.task-item').forEach(t=>t.classList.remove('completed'));updateProgress();}
 updateProgress();
