@@ -2,211 +2,44 @@
 <html lang="ar">
 
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>جدول الروتين اليومي</title>
-<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Amiri&display=swap">
 <style>
-
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-}
-
-html,body{
-min-height:100%;
-font-family:'Cairo',sans-serif;
-direction:rtl;
-}
-
-body{
-background:linear-gradient(135deg,#fddde6 0%,#ffebf0 100%);
-padding:20px;
-}
-
-.container{
-max-width:900px;
-margin:0 auto;
-background:white;
-border-radius:20px;
-box-shadow:0 20px 60px rgba(0,0,0,0.2);
-overflow:hidden;
-}
-
-.header{
-background:linear-gradient(135deg,#f8a5c2,#ffb6c1);
-color:white;
-padding:40px 20px;
-text-align:center;
-}
-
-.header h1{
-font-size:32px;
-margin-bottom:10px;
-}
-
-.header p{
-font-size:14px;
-opacity:0.9;
-}
-
-.content{
-padding:30px;
-}
-
-.section{
-margin-bottom:30px;
-}
-
-.section h2{
-color:#ff6f91;
-font-size:22px;
-margin-bottom:15px;
-display:flex;
-align-items:center;
-gap:10px;
-}
-
-.task-list{
-display:grid;
-gap:15px;
-}
-
-.task-item{
-display:flex;
-align-items:center;
-gap:20px;
-padding:20px;
-background:#f8f9ff;
-border-radius:14px;
-border:2px solid #ffe0f0;
-cursor:pointer;
-}
-
-.task-item.completed{
-background:#ffd6e8;
-border-color:#ff6f91;
-}
-
-.task-checkbox{
-width:30px;
-height:30px;
-border:2px solid #ddd;
-border-radius:8px;
-background:white;
-}
-
-.task-name{
-flex:1;
-font-size:18px;
-color:#333;
-font-weight:500;
-display:flex;
-align-items:center;
-gap:20px;
-}
-
-.task-item.completed .task-name{
-color:#ff6f91;
-text-decoration:line-through;
-}
-
-.progress-section{
-background:#ffe6f0;
-padding:25px;
-border-radius:14px;
-margin-top:30px;
-}
-
-.progress-title{
-color:#ff6f91;
-font-size:20px;
-margin-bottom:15px;
-text-align:center;
-}
-
-.progress-bar{
-width:100%;
-height:32px;
-background:#ffd6e8;
-border-radius:16px;
-overflow:hidden;
-margin-bottom:12px;
-}
-
-.progress-fill{
-height:100%;
-background:linear-gradient(90deg,#ffb6c1,#ff6f91);
-display:flex;
-align-items:center;
-justify-content:center;
-color:white;
-font-weight:bold;
-}
-
-.stats{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
-gap:15px;
-margin-top:15px;
-}
-
-.stat-box{
-background:white;
-padding:15px;
-border-radius:10px;
-border:2px solid #ffe0f0;
-text-align:center;
-}
-
-.stat-number{
-font-size:26px;
-font-weight:bold;
-color:#ff6f91;
-}
-
-.stat-label{
-font-size:13px;
-color:#999;
-margin-top:5px;
-}
-
-.stars-container{
-text-align:center;
-margin-top:15px;
-}
-
-.stars{
-font-size:30px;
-}
-
-.reset-btn{
-width:100%;
-padding:14px;
-margin-top:20px;
-background:#f0f0f0;
-border:none;
-border-radius:10px;
-font-size:16px;
-cursor:pointer;
-}
-
-/* حجم الايقونات */
-
-.montessori-icon{
-width:130px;
-height:130px;
-}
-
+*{margin:0;padding:0;box-sizing:border-box;}
+html,body{min-height:100%;font-family:'Amiri',sans-serif;direction:rtl;}
+body{background:linear-gradient(135deg,#fddde6 0%,#ffebf0 100%);padding:20px;}
+.container{max-width:900px;margin:0 auto;background:white;border-radius:20px;box-shadow:0 20px 60px rgba(0,0,0,0.2);overflow:hidden;}
+.header{background:linear-gradient(135deg,#f8a5c2,#ffb6c1);color:white;padding:40px 20px;text-align:center;}
+.header h1{font-size:32px;margin-bottom:10px;}
+.header p{font-size:14px;opacity:0.9;}
+.content{padding:30px;}
+.section{margin-bottom:30px;}
+.section h2{color:#ff6f91;font-size:22px;margin-bottom:15px;display:flex;align-items:center;gap:10px;}
+.task-list{display:grid;gap:15px;}
+.task-item{display:flex;align-items:center;gap:20px;padding:20px;background:#f8f9ff;border-radius:14px;border:2px solid #ffe0f0;cursor:pointer;}
+.task-item.completed{background:#ffd6e8;border-color:#ff6f91;}
+.task-checkbox{width:30px;height:30px;border:2px solid #ddd;border-radius:8px;background:white;}
+.task-name{flex:1;font-size:18px;color:#333;font-weight:500;display:flex;align-items:center;gap:20px;}
+.task-item.completed .task-name{color:#ff6f91;text-decoration:line-through;}
+.progress-section{background:#ffe6f0;padding:25px;border-radius:14px;margin-top:30px;}
+.progress-title{color:#ff6f91;font-size:20px;margin-bottom:15px;text-align:center;}
+.progress-bar{width:100%;height:32px;background:#ffd6e8;border-radius:16px;overflow:hidden;margin-bottom:12px;}
+.progress-fill{height:100%;background:linear-gradient(90deg,#ffb6c1,#ff6f91);display:flex;align-items:center;justify-content:center;color:white;font-weight:bold;}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:15px;margin-top:15px;}
+.stat-box{background:white;padding:15px;border-radius:10px;border:2px solid #ffe0f0;text-align:center;}
+.stat-number{font-size:26px;font-weight:bold;color:#ff6f91;}
+.stat-label{font-size:13px;color:#999;margin-top:5px;}
+.stars-container{text-align:center;margin-top:15px;}
+.stars{font-size:30px;}
+.reset-btn{width:100%;padding:14px;margin-top:20px;background:#f0f0f0;border:none;border-radius:10px;font-size:16px;cursor:pointer;}
+.montessori-icon{width:120px;height:120px;}
+.input-name{width:100%;padding:12px;margin-bottom:20px;border-radius:10px;border:2px solid #ffe0f0;font-size:16px;}
 </style>
-
 </head>
 
 <body>
-
 <div class="container">
 
 <div class="header">
@@ -216,207 +49,164 @@ height:130px;
 
 <div class="content">
 
-<div class="section">
+<!-- User Name Input -->
+<input type="text" id="userName" class="input-name" placeholder="ادخلي اسمك | Enter Your Name">
 
+<div id="dateDisplay" style="margin-bottom:20px;font-size:16px;color:#ff6f91;"></div>
+
+<div class="section">
 <h2>☀️ روتين الصباح | Morning Routine</h2>
-
-<div class="task-list">
+<div class="task-list" id="morningTasks">
 
 <div class="task-item" onclick="toggleTask(this)">
 <div class="task-checkbox"></div>
-<div class="task-name">
-<img src="icons/wakeup.png" class="montessori-icon">
-نصحى بدري | Wake up
-</div>
+<div class="task-name"><img src="icons/wakeup.png" class="montessori-icon"> نصحى بدري | Wake up</div>
 </div>
 
 <div class="task-item" onclick="toggleTask(this)">
 <div class="task-checkbox"></div>
-<div class="task-name">
-<img src="icons/makebed.png" class="montessori-icon">
-ترتيب السرير | Make Bed
-</div>
+<div class="task-name"><img src="icons/makebed.png" class="montessori-icon"> ترتيب السرير | Make Bed</div>
 </div>
 
 <div class="task-item" onclick="toggleTask(this)">
 <div class="task-checkbox"></div>
-<div class="task-name">
-<img src="icons/bathroom.png" class="montessori-icon">
-استخدام الحمام | Bathroom
-</div>
+<div class="task-name"><img src="icons/bathroom.png" class="montessori-icon"> استخدام الحمام | Bathroom</div>
 </div>
 
 <div class="task-item" onclick="toggleTask(this)">
 <div class="task-checkbox"></div>
-<div class="task-name">
-<img src="icons/teeth.png" class="montessori-icon">
-تنظيف الأسنان | Brush Teeth
-</div>
+<div class="task-name"><img src="icons/teeth.png" class="montessori-icon"> تنظيف الأسنان | Brush Teeth</div>
 </div>
 
 <div class="task-item" onclick="toggleTask(this)">
 <div class="task-checkbox"></div>
-<div class="task-name">
-<img src="icons/breakfast.png" class="montessori-icon">
-الفطور | Breakfast
-</div>
+<div class="task-name"><img src="icons/breakfast.png" class="montessori-icon"> الفطور | Breakfast</div>
 </div>
 
 </div>
 </div>
 
 <div class="section">
-
 <h2>🌙 روتين المساء | Evening Routine</h2>
-
-<div class="task-list">
+<div class="task-list" id="eveningTasks">
 
 <div class="task-item" onclick="toggleTask(this)">
 <div class="task-checkbox"></div>
-<div class="task-name">
-<img src="icons/toys.png" class="montessori-icon">
-ترتيب الألعاب | Tidy Toys
-</div>
+<div class="task-name"><img src="icons/toys.png" class="montessori-icon"> ترتيب الألعاب | Tidy Toys</div>
 </div>
 
 <div class="task-item" onclick="toggleTask(this)">
 <div class="task-checkbox"></div>
-<div class="task-name">
-<img src="icons/shower.png" class="montessori-icon">
-الاستحمام | Shower
-</div>
+<div class="task-name"><img src="icons/shower.png" class="montessori-icon"> الاستحمام | Shower</div>
 </div>
 
 <div class="task-item" onclick="toggleTask(this)">
 <div class="task-checkbox"></div>
-<div class="task-name">
-<img src="icons/teeth1.png" class="montessori-icon">
-تنظيف الأسنان | Brush Teeth
-</div>
+<div class="task-name"><img src="icons/teeth1.png" class="montessori-icon"> تنظيف الأسنان | Brush Teeth</div>
 </div>
 
 <div class="task-item" onclick="toggleTask(this)">
 <div class="task-checkbox"></div>
-<div class="task-name">
-<img src="icons/sleep.png" class="montessori-icon">
-لبس البيجامة | Pajamas
-</div>
+<div class="task-name"><img src="icons/sleep.png" class="montessori-icon"> لبس البيجامة | Pajamas</div>
 </div>
 
 <div class="task-item" onclick="toggleTask(this)">
 <div class="task-checkbox"></div>
-<div class="task-name">
-<img src="icons/story.png" class="montessori-icon">
-قراءة قصة | Story Time
-</div>
+<div class="task-name"><img src="icons/story.png" class="montessori-icon"> قراءة قصة | Story Time</div>
 </div>
 
 <div class="task-item" onclick="toggleTask(this)">
 <div class="task-checkbox"></div>
-<div class="task-name">
-<img src="icons/bedtime.png" class="montessori-icon">
-وقت النوم | Bedtime
-</div>
+<div class="task-name"><img src="icons/bedtime.png" class="montessori-icon"> وقت النوم | Bedtime</div>
 </div>
 
 </div>
 </div>
 
-<!-- قسم التقدم -->
-
+<!-- Progress Section -->
 <div class="progress-section">
-
-<div class="progress-title">
-🎯 تقدمك اليوم | Today's Progress
-</div>
-
-<div class="progress-bar">
-<div class="progress-fill" id="progressFill" style="width:0%">
-<span id="progressText">0%</span>
-</div>
-</div>
-
+<div class="progress-title">🎯 تقدمك اليوم | Today's Progress</div>
+<div class="progress-bar"><div class="progress-fill" id="progressFill" style="width:0%"><span id="progressText">0%</span></div></div>
 <div class="stats">
-
-<div class="stat-box">
-<div class="stat-number" id="completedCount">0</div>
-<div class="stat-label">مهام مكتملة | Completed</div>
+<div class="stat-box"><div class="stat-number" id="completedCount">0</div><div class="stat-label">مهام مكتملة | Completed</div></div>
+<div class="stat-box"><div class="stat-number" id="totalCount">11</div><div class="stat-label">إجمالي المهام | Total</div></div>
+<div class="stat-box"><div class="stat-number" id="starsCount">0</div><div class="stat-label">عدد النجوم | Stars</div></div>
 </div>
-
-<div class="stat-box">
-<div class="stat-number" id="totalCount">11</div>
-<div class="stat-label">إجمالي المهام | Total</div>
-</div>
-
-<div class="stat-box">
-<div class="stat-number" id="starsCount">0</div>
-<div class="stat-label">عدد النجوم | Stars</div>
-</div>
-
-</div>
-
-<div class="stars-container">
-<div class="stars" id="starsDisplay"></div>
-</div>
-
-<button class="reset-btn" onclick="resetDay()">
-🔄 إعادة تعيين اليوم | Reset Day
-</button>
-
+<div class="stars-container"><div class="stars" id="starsDisplay"></div></div>
+<button class="reset-btn" onclick="resetDay()">🔄 إعادة تعيين اليوم | Reset Day</button>
 </div>
 
 </div>
 </div>
 
 <script>
+let userNameInput = document.getElementById("userName");
+let today = new Date();
+let day = today.toLocaleDateString('ar-SA', { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' });
+document.getElementById("dateDisplay").textContent = day;
+
+// Load saved name
+if(localStorage.getItem("userName")) {
+    userNameInput.value = localStorage.getItem("userName");
+}
+
+// Save name and date when typing
+userNameInput.addEventListener("input", function() {
+    localStorage.setItem("userName", userNameInput.value);
+    localStorage.setItem("date", new Date().toISOString());
+    loadProgress();
+});
 
 function toggleTask(el){
-el.classList.toggle('completed');
-updateProgress();
+    el.classList.toggle('completed');
+    updateProgress();
+    saveProgress();
 }
 
 function updateProgress(){
-
-const all=document.querySelectorAll('.task-item');
-const done=document.querySelectorAll('.task-item.completed');
-
-const perc=Math.round((done.length/all.length)*100);
-
-document.getElementById('progressFill').style.width=perc+'%';
-document.getElementById('progressText').textContent=perc+'%';
-
-document.getElementById('completedCount').textContent=done.length;
-document.getElementById('totalCount').textContent=all.length;
-
-const stars=Math.floor(done.length/2);
-
-document.getElementById('starsCount').textContent=stars;
-
-let starsDisp='';
-
-for(let i=0;i<stars;i++){
-starsDisp+='⭐ ';
-}
-
-document.getElementById('starsDisplay').textContent=starsDisp;
-
+    const all=document.querySelectorAll('.task-item');
+    const done=document.querySelectorAll('.task-item.completed');
+    const perc=Math.round((done.length/all.length)*100);
+    document.getElementById('progressFill').style.width=perc+'%';
+    document.getElementById('progressText').textContent=perc+'%';
+    document.getElementById('completedCount').textContent=done.length;
+    document.getElementById('totalCount').textContent=all.length;
+    const stars=Math.floor(done.length/2);
+    document.getElementById('starsCount').textContent=stars;
+    let starsDisp='';
+    for(let i=0;i<stars;i++){starsDisp+='⭐ ';}
+    document.getElementById('starsDisplay').textContent=starsDisp;
 }
 
 function resetDay(){
-
-document.querySelectorAll('.task-item').forEach(t=>{
-t.classList.remove('completed');
-});
-
-updateProgress();
-
+    document.querySelectorAll('.task-item').forEach(t=>t.classList.remove('completed'));
+    localStorage.removeItem("tasks");
+    updateProgress();
 }
 
-updateProgress();
+function saveProgress(){
+    const all=document.querySelectorAll('.task-item');
+    let progress = [];
+    all.forEach((t,i)=>{progress[i]=t.classList.contains('completed');});
+    localStorage.setItem("tasks", JSON.stringify(progress));
+}
+
+function loadProgress(){
+    const all=document.querySelectorAll('.task-item');
+    let progress = JSON.parse(localStorage.getItem("tasks"));
+    if(progress){
+        all.forEach((t,i)=>{
+            if(progress[i]) t.classList.add('completed');
+            else t.classList.remove('completed');
+        });
+    }
+    updateProgress();
+}
+
+// Load progress on page load
+window.onload = loadProgress;
 
 </script>
 
 </body>
 </html>
-
-
